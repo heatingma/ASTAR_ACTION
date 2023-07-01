@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        python: [3.7, 3.8, 3.9, 3.10]
+        python: [3.7]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -22,3 +22,8 @@ jobs:
         run: pip install -r rq.txt
       - name: Build Cython extension
         run: python setup.py build_ext --inplace
+      - name: Upload .pyd file
+        uses: actions/upload-artifact@v2
+        with:
+          name: my_package.pyd
+          path: build/my_package.pyd
