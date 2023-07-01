@@ -19,6 +19,6 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Install dependencies
-        run: pip install cython numpy
+        run: pip install rq.txt
       - name: Build Cython extension
         run: python setup.py build_ext --inplace
