@@ -22,10 +22,3 @@ jobs:
         run: pip install cython numpy
       - name: Build Cython extension
         run: python setup.py build_ext --inplace
-      - name: Package extension
-        run: python setup.py sdist bdist_wheel
-      - name: Publish package
-        uses: pypa/gh-action-pypi-publish@v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}
