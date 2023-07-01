@@ -3,7 +3,8 @@ name: ASTAR
 on:
   push:
     branches: [ main ]
-    
+  
+  
 jobs:
   build:
     runs-on: ${{ matrix.os }}
