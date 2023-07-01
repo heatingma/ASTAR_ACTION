@@ -3,6 +3,7 @@ name: ASTAR
 on:
   push:
     branches: [ main ]
+    
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -18,6 +19,6 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Install dependencies
-        run: pip install rq.txt
+        run: pip install -r rq.txt
       - name: Build Cython extension
         run: python setup.py build_ext --inplace
