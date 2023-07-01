@@ -25,5 +25,5 @@ jobs:
       - name: Upload .pyd file
         uses: actions/upload-artifact@v2
         with:
-          name: my_package.pyd
-          path: build/my_package.pyd
+          name: astar.pyd
+          path: build/astar.pyd
