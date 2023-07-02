@@ -9,7 +9,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest windows-10]
+        os: [windows-latest,windows-10]
         python: [3.7 3.8 3.9]
     steps:
       - name: Checkout code
