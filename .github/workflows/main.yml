@@ -6,10 +6,9 @@ on:
   
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [windows-latest]
         python: [3.7,3.8,3.9]
     steps:
       - name: Checkout code
@@ -22,9 +21,9 @@ jobs:
         run: pip install -r rq.txt
       - name: Build Cython extension
         run: python setup.py build_ext --inplace
-      - name: Upload .pyd file
+      - name: Upload .so file
         uses: actions/upload-artifact@v2
         with:
           name: astar-files
           path: |
-            **/*.pyd
+            **/*.so
