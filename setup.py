@@ -15,4 +15,5 @@ setup(
         language_level = "3",
     ),
     zip_safe=False,
+    script_args=['build_ext', '-b', 'build'],
 )
